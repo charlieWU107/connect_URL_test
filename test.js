@@ -1,4 +1,4 @@
-videojs.registerPlugin('backForwardButtons', function() {
+videojs.registerPlugin('URL_test', function() {
     var myPlayer = this,
         jumpAmount = 5,
         controlBar,
