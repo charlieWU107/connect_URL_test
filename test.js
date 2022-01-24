@@ -1,23 +1,31 @@
-var myPlayer;
+videojs.getPlayer("vjs_video_3").ready(function () {
+  // +++ Create divs for buttons +++
+var myPlayer = videojs.getPlayer("vjs_video_3"),
+controlBar,
+insertBeforeNode,
+newElementTWP = document.createElement("div"),
+newImageTWP = document.createElement("img");
 
-// Get the PLAYER and be sure the PLAYER is ready to interact with
-videojs.getPlayer("myPlayerID").ready(function() {
-  //  Get a reference to the PLAYER
-  myPlayer = this;
-  // +++ Add the class to the player +++
-  myPlayer.addClass("myClass");
+// +++ Assign IDs for later element manipulation +++
+newElementTWP.id = "promoteButton";
+
+// +++ Assign properties to elements and assign to parents +++
+newImageTWP.setAttribute(
+"src",
+"https://dev-img.taiwanplus.com/vjs-cust-promote-button.png"
+);
+newElementTWP.appendChild(newImageTWP);
+
+// +++ Get controlbar and insert elements +++
+controlBar = myPlayer.$(".vjs-control-bar");
+// Get the element to insert buttons in front of in conrolbar
+insertBeforeNode = myPlayer.$(".vjs-picture-in-picture-control");
+
+// Insert the button div in proper location
+controlBar.insertBefore(newElementTWP, insertBeforeNode);
+
+// +++ Add event handlers to jump back or forward +++
+newElementTWP.addEventListener("click", function() {
+window.open("https://www.taiwanplus.com", "_blank");
 });
-
-// +++ Function called by button that toggles class +++
-function toggleControlbar() {
-  myPlayer.toggleClass("myClass");
-}
-<pre>
-======
-
-<input 
-type="button"value="註冊" 
-onclick="javascript:window.location.href='http://www.youtube.com'"/>
-
-======
-</pre> 
+})
