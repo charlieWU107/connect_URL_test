@@ -1,4 +1,4 @@
-videojs.getPlayer("vjs_video_3").$(function () {
+videojs.getPlayer("vjs_video_3")
   // +++ Create divs for buttons +++
 var myPlayer = videojs.getPlayer("vjs_video_3"),
 controlBar,
@@ -28,4 +28,3 @@ controlBar.insertBefore(newElementTWP, insertBeforeNode);
 newElementTWP.addEventListener("click", function() {
 window.open("https://www.taiwanplus.com", "_blank");
 });
-})
