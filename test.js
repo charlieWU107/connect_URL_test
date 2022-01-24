@@ -1,4 +1,4 @@
-videojs.getPlayer("vjs_video_3").ready(function () {
+videojs.getPlayer("vjs_video_3").$(function () {
   // +++ Create divs for buttons +++
 var myPlayer = videojs.getPlayer("vjs_video_3"),
 controlBar,
